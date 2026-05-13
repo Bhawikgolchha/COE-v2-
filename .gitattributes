@@ -1,0 +1,54 @@
+# Force text files to use LF line endings
+* text=auto eol=lf
+
+# Unity YAML files — text but with merge driver
+*.cs                  text diff=csharp
+*.shader              text
+*.uss                 text
+*.uxml                text
+*.json                text
+*.md                  text
+*.gitignore           text
+*.gitattributes       text
+*.yml                 text
+*.yaml                text
+
+# Unity scene / prefab / asset YAML — text but binary-ish; ensure CRLF safety
+*.meta                text eol=lf
+*.unity               text eol=lf
+*.prefab              text eol=lf
+*.asset               text eol=lf
+*.mat                 text eol=lf
+*.anim                text eol=lf
+*.controller          text eol=lf
+*.physicMaterial      text eol=lf
+*.physicsMaterial2D   text eol=lf
+*.cubemap             text eol=lf
+*.lighting            text eol=lf
+
+# Treat large binary files as binary
+*.png                 binary
+*.jpg                 binary
+*.jpeg                binary
+*.tga                 binary
+*.psd                 binary
+*.tif                 binary
+*.tiff                binary
+*.exr                 binary
+*.hdr                 binary
+*.fbx                 binary
+*.obj                 binary
+*.gltf                binary
+*.glb                 binary
+*.blend               binary
+*.mp3                 binary
+*.wav                 binary
+*.ogg                 binary
+*.mp4                 binary
+*.mov                 binary
+*.dll                 binary
+*.pdb                 binary
+*.so                  binary
+*.dylib               binary
+*.unitypackage        binary
+*.zip                 binary
