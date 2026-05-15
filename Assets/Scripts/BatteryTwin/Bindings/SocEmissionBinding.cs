@@ -30,6 +30,11 @@ namespace BatteryTwin.Bindings
         public void Apply(BatteryReading reading)
         {
             if (target == null) return;
+            if (_mpb == null)
+            {
+                _mpb = new MaterialPropertyBlock();
+                _propId = Shader.PropertyToID(emissionProperty);
+            }
             float k = Mathf.Clamp01(reading.SOC / 100f) * maxIntensity;
             target.GetPropertyBlock(_mpb);
             _mpb.SetColor(_propId, emissionColor * k);

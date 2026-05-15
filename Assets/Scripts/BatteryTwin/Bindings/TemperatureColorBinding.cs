@@ -32,6 +32,11 @@ namespace BatteryTwin.Bindings
         public void Apply(BatteryReading reading)
         {
             if (target == null) return;
+            if (_mpb == null)
+            {
+                _mpb = new MaterialPropertyBlock();
+                _propId = Shader.PropertyToID(colorProperty);
+            }
             float k = Mathf.InverseLerp(minTemp, maxTemp, reading.Temperature);
             Color c = Color.Lerp(coolColor, hotColor, k);
             target.GetPropertyBlock(_mpb);

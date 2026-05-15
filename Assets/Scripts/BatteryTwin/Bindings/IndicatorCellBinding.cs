@@ -53,6 +53,13 @@ namespace BatteryTwin.Bindings
         public void Apply(BatteryReading reading)
         {
             if (target == null) return;
+            if (_mpb == null)
+            {
+                _mpb = new MaterialPropertyBlock();
+                _propId = Shader.PropertyToID(colorProperty);
+                if (colorRamp == null || colorRamp.colorKeys == null || colorRamp.colorKeys.Length == 0)
+                    colorRamp = DefaultRamp();
+            }
 
             float raw = field switch
             {
